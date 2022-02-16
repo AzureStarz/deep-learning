@@ -10,6 +10,7 @@ ViT的网络结构很好地保留了Transformer的encoder架构，主要是在�
 - 图片分patches 利用大小和patch大小一样 步距为patch的卷积核来切割图片成1D的向量
 - 参考Bert加入观察全局的cls token（其实用GAP来实现也行）
 - Position Embedding 采用1d(2d或者相对位置编码都一样)
+- 采用Stochastic Depth来控制残差链接
 ## Some Problems
 如下图所示，在使用nn.Sequential时 可以用*layers
 ![problem1.png](photos/problem1.png)
