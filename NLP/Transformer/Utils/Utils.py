@@ -2,7 +2,7 @@
 # @Time : 2022/2/13 11:31
 # @Author : Alethia Chaos
 # @Email : 2019141620371@stu.scu.edu.cn
-# @File : Utils.py
+# @File : utils.py
 # @Project : Transformer
 import math
 
@@ -35,10 +35,10 @@ def sub_sequent_mask(size):
 
 
 def attention(query, key, value, mask=None, dropout=None):
-    # query key 的shape都是(num_batch, num_head, seq_length, num_feature)
+    # query key 的shape都是(num_batch, num_heads, seq_length, num_feature)
     d_k = query.shape[-1]
     # matmul会把query和key的最后两维进行矩阵乘法，这样效率更高
-    # attention_scores 的shape是(num_batch, num_head, seq_length, seq_length)
+    # attention_scores 的shape是(num_batch, num_heads, seq_length, seq_length)
     # a_ij 代表时刻i attention 时刻j 的注意力分数
     attention_scores = torch.matmul(query, key.transpose(-2, -1)) / math.sqrt(d_k)
     if mask is not None:
