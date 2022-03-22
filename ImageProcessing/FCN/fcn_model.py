@@ -3,7 +3,7 @@ from typing import Dict
 import torch.nn as nn
 from torch import Tensor
 import torch.nn.functional as F
-from backbone import resnet50
+from resnet_backbone import resnet50
 
 
 class IntermediateLayerGetter(nn.ModuleDict):
